@@ -1,0 +1,36 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>{% block title %} Главная {% endblock %} - Голосовалка</title>
+	<link rel="stylesheet" href="{% static 'main/style.css' %}">
+</head>
+<body>
+	<div class="all">
+		<feader>
+			<h1>Yello</h1>
+			{% if user.is_authenticated %}
+				<div>
+					<a href="#">Профиль</a>
+					<div>
+						<a href="#">Мои записи</a>
+						<a href="#">Выйти</a>
+					</div>
+				</div>
+			{% else %}
+				<a href="#">Регистрация</a>
+				<a href="#">Вход</a>
+			{% endif %}
+		</feader>
+		<main>
+			{% block content %}
+			{% endblock %}
+		</main>
+		<footer>
+			Практическая работа.
+		</footer>
+	</div>
+</body>
+</html>
