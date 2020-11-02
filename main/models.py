@@ -9,6 +9,7 @@ class User(AbstractUser):
 
 class Question(models.Model):
 	title = models.CharField(max_length=255, verbose_name="Название", default='')
+	datetime = models.DateTimeField(auto_now_add=True, null=True, verbose_name='Дата публикации')
 	text = models.CharField(max_length=255, verbose_name="Текст", default='')
 
 	def __str__(self):

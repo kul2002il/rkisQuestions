@@ -4,4 +4,13 @@
 	<article>
 		<h2>Главная страница.</h2>
 	</article>
+	{% if questions %}
+		{% for que in questions %}
+			<article>
+				<h2>{{ que.title }}</h2>
+				<p>{{ que.datetime }}</p>
+				<p>{{ que.text }}</p>
+			</article>
+		{% endfor %}
+	{% endif %}
 {% endblock %}
